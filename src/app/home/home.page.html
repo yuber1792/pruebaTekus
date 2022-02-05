@@ -1,20 +1,40 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Prueba Tekus - BITCOIN Api CoinBase
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+   <!-- Muestra el valor actual del bitcoin  -->
+   <ion-title>
+      Valor en tiempo real
+    </ion-title>
+   <ion-card (click)="presentModal(false,null)">
+      <ion-card-header>
+        <ion-card-subtitle>Fecha {{fechaMascara}} (Ver detalle)</ion-card-subtitle>
+        <ion-card-title>USD {{bitCoinDolares}}</ion-card-title>
+      </ion-card-header>
+  </ion-card>
+  <!-- Muestra los historicos del bitcoin   -->
+  
+  <ion-title>
+      Histórico de cierres
+    </ion-title>
+    <ion-card *ngFor="let item of historicoPreciosBitcoin" >
+      <ion-card-header (click)="presentModal(true,item)">
+        <ion-card-subtitle>Fecha {{item.data.fecha}} (Ver detalle)</ion-card-subtitle>
+        <ion-card-title>Valor en dólares: USD {{item.data.amount}}</ion-card-title>
+      </ion-card-header>
+
+      
+  </ion-card>
+
+
+
+
+
 </ion-content>
