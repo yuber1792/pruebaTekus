@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Valores del Bitcoin para: {{fecha}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+ 
+  <!-- Muestra el valor actual del bitcoin en dolares -->
+  <ion-card >
+      <ion-card-header>        
+        <ion-card-title>Dólares: USD {{amount}}</ion-card-title>
+      </ion-card-header>   
+  </ion-card>
+  <!-- Muestra el valor actual del bitcoin en euros -->
+   <ion-card >
+      <ion-card-header>        
+        <ion-card-title>Euros: EUR {{totalEnEuros}}</ion-card-title>
+      </ion-card-header>   
+  </ion-card> 
+  <!-- Muestra el valor actual del bitcoin en pesos  -->
+   <ion-card >
+      <ion-card-header>        
+        <ion-card-title>Pesos: $ {{totalEnPesos}}</ion-card-title>
+      </ion-card-header>   
+  </ion-card>
+
+
+  
+
+  <!-- boton para cerrar la ventana  -->
+  <ion-button color="primary"  expand="full" (click)="cerrarVentana()">Volver</ion-button>
+
+
+</ion-content>
